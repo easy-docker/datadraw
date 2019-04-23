@@ -1,15 +1,13 @@
 #!/bin/sh
+export LC_ALL=C.UTF-8;
+export LANG=C.UTF-8;
 USER="root"
 PASSWORD="123456"
 DATABASE="datadraw"
 ######################
 #crate database
-docker exec -it mysql5 mysql -u $USER -p$PASSWORD -e "CREATE DATABASE $DATABASE;"
+docker exec -it mysql5 mysql -u $USER -p$PASSWORD -e "CREATE DATABASE $DATABASE DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
 #importdata
-SQLSTR=`cat mysql.sql`
-docker exec -it mysql5 mysql -u $USER -p$PASSWORD $DATABASE -e "$SQLSTR"
-SQLSTR=`cat static/editor/templates/templates.sql`
-docker exec -it mysql5 mysql -u $USER -p$PASSWORD $DATABASE -e "$SQLSTR"
-cat static/editor/templates/templatedata.sql|while read line;do
-    docker exec -it mysql5 mysql -u $USER -p$PASSWORD $DATABASE -e "$line";
-done
+docker exec -i mysql5 mysql -u $USER -p$PASSWORD $DATABASE < mysql.sql
+docker exec -i mysql5 mysql -u $USER -p$PASSWORD $DATABASE < static/editor/templates/templates.sql
+docker exec -i mysql5 mysql -u $USER -p$PASSWORD $DATABASE < static/editor/templates/templatedata.sql

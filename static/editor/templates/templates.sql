@@ -32,16 +32,16 @@ CREATE TABLE `sd_template_class`  (
 -- ----------------------------
 -- Records of sd_template_class
 -- ----------------------------
-INSERT INTO `sd_template_class` VALUES (1, 'business', '商务');
-INSERT INTO `sd_template_class` VALUES (2, 'charts', '统计图');
-INSERT INTO `sd_template_class` VALUES (3, 'engineering', '工程');
-INSERT INTO `sd_template_class` VALUES (4, 'flowcharts', '流程图');
-INSERT INTO `sd_template_class` VALUES (5, 'layout', '布局');
-INSERT INTO `sd_template_class` VALUES (6, 'maps', '思维导图');
-INSERT INTO `sd_template_class` VALUES (7, 'software', '软件');
-INSERT INTO `sd_template_class` VALUES (8, 'tables', '表格');
+INSERT INTO `sd_template_class` VALUES (1, 'business', '&#21830;&#21153;');
+INSERT INTO `sd_template_class` VALUES (2, 'charts', '&#32479;&#35745;&#22270;');
+INSERT INTO `sd_template_class` VALUES (3, 'engineering', '&#24037;&#31243;');
+INSERT INTO `sd_template_class` VALUES (4, 'flowcharts', '&#27969;&#31243;&#22270;');
+INSERT INTO `sd_template_class` VALUES (5, 'layout', '&#24067;&#23616;');
+INSERT INTO `sd_template_class` VALUES (6, 'maps', '&#24605;&#32500;&#23548;&#22270;');
+INSERT INTO `sd_template_class` VALUES (7, 'software', '&#36719;&#20214;');
+INSERT INTO `sd_template_class` VALUES (8, 'tables', '&#34920;&#26684;');
 INSERT INTO `sd_template_class` VALUES (9, 'uml', 'UML');
-INSERT INTO `sd_template_class` VALUES (10, 'venn', '维恩图');
-INSERT INTO `sd_template_class` VALUES (11, 'network', '网络拓扑图');
-INSERT INTO `sd_template_class` VALUES (12, 'gcp', '谷歌云平台');
-INSERT INTO `sd_template_class` VALUES (13, 'other', '其他');
+INSERT INTO `sd_template_class` VALUES (10, 'venn', '&#32500;&#24681;&#22270;');
+INSERT INTO `sd_template_class` VALUES (11, 'network', '&#32593;&#32476;&#25299;&#25169;&#22270;');
+INSERT INTO `sd_template_class` VALUES (12, 'gcp', '&#35895;&#27468;&#20113;&#24179;&#21488;');
+INSERT INTO `sd_template_class` VALUES (13, 'other', '&#20854;&#20182;');
