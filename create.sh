@@ -2,8 +2,8 @@
 #ext-gd
 mkdir -p tmp
 mkdir -p ../mysqldata
-chmod 777 runtime
-chmod -R 777 public
+# chmod 777 runtime
+# chmod -R 777 public
 docker run --rm --interactive --tty -v $PWD:/app -v $PWD/tmp:/tmp --user $(id -u):$(id -g) composer install
 docker run -d -p 172.17.0.1:3306:3306 --name mysql5 -e MYSQL_ROOT_PASSWORD=123456  -v $PWD/../mysqldata:/var/lib/mysql --restart always mysql:5
 docker build . -t php7.2apache
