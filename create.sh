@@ -2,8 +2,9 @@
 #ext-gd
 mkdir -p tmp
 mkdir -p ../mysqldata
+chmod 777 runtime
 docker run --rm --interactive --tty -v $PWD:/app -v $PWD/tmp:/tmp --user $(id -u):$(id -g) composer install
-docker run -d -p 3306:3306 --name mysql5 -e MYSQL_ROOT_PASSWORD=123456  -v $PWD/../mysqldata:/var/lib/mysql --restart always mysql:5
+docker run -d -p 172.17.0.1:3306:3306 --name mysql5 -e MYSQL_ROOT_PASSWORD=123456  -v $PWD/../mysqldata:/var/lib/mysql --restart always mysql:5
 docker build . -t php7.2apache
 docker run -d -p 8081:80 --name apache-php-app -v "$PWD":/var/www/html --restart always php7.2apache
 echo "如果没有旧数据库,现在运行 ./importSQL.sh 导入"
