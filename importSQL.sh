@@ -2,9 +2,11 @@
 USER="root"
 PASSWORD="123456"
 DATABASE="datadraw"
-SQLSTR=`cat mysql.sql`
 ######################
 #crate database
 docker exec -it mysql5 mysql -u $USER -p$PASSWORD -e "CREATE DATABASE $DATABASE;"
 #importdata
+SQLSTR=`cat mysql.sql`
+docker exec -it mysql5 mysql -u $USER -p$PASSWORD $DATABASE -e "$SQLSTR"
+SQLSTR=`cat static/editor/templates/templates.sql`
 docker exec -it mysql5 mysql -u $USER -p$PASSWORD $DATABASE -e "$SQLSTR"
