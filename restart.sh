@@ -1,2 +1,2 @@
 #!/bin/sh
-docker restart apache-php-app mysql5
+docker restart datadraw mysql5

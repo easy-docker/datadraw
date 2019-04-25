@@ -1,3 +1,3 @@
 #!/bin/sh
-docker stop apache-php-app mysql5
-docker rm apache-php-app mysql5
+docker stop datadraw mysql5
+docker rm datadraw mysql5
