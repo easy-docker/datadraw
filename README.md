@@ -19,6 +19,7 @@ curl -L https://raw.githubusercontent.com/easy-docker/datadraw/master/create.sh 
  - 然后 `docker restart datadraw`
  - 访问 http://127.0.0.1:8081/
  - 用户名: admin@datadraw.net 密码: admin
+
 ```
 name=datadraw
 HOSTNAME="172.17.0.1"
@@ -49,5 +50,5 @@ docker run -d -p \
     ghostry/datadraw
 ```
 
-# 介绍
+# 原项目介绍
 [原项目介绍](https://github.com/zxhm001/DataDraw#readme)
