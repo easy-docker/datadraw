@@ -15,4 +15,10 @@ if [ ! -f /var/www/html/public/locks ];then
     cp -r /var/www/html/public.ex/* /var/www/html/public/
 fi
 
+config=`cat /var/www/html/application/config.php`
+
+if [ "$config" == "" ];then
+    cat /var/www/html/application/config_sample.php > /var/www/html/application/config.php
+fi
+
 /usr/local/bin/apache2-foreground
