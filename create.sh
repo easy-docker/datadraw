@@ -1,10 +1,15 @@
-#!/bin/sh
+#!/bin/bash
 USER="root"
-PASSWORD="123456"
-DATABASE="datadraw"
+if [ "$PASSWORD" == "" ]:then
+    PASSWORD="123456"
+fi
+if [ "$DATABASE" == "" ]:then
+    DATABASE="datadraw"
+fi
 
 docker pull mysql:5
 mkdir -p mysqldata
+docker rm -f mysql5
 docker run -d -p 172.17.0.1:3306:3306 --name mysql5 -e MYSQL_ROOT_PASSWORD=$PASSWORD -v $PWD/mysqldata:/var/lib/mysql --restart always mysql:5
 
 docker pull ghostry/datadraw
@@ -27,15 +32,15 @@ docker run -d -p \
     ghostry/datadraw
 
 #crate database
-docker exec -it mysql5 mysql -u $USER -p$PASSWORD -e "CREATE DATABASE $DATABASE DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+docker exec -i mysql5 mysql -u $USER -p$PASSWORD -e "CREATE DATABASE $DATABASE DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
 #importdata
 docker exec -i mysql5 mysql -u $USER -p$PASSWORD $DATABASE < sql/mysql.sql
 docker exec -i mysql5 mysql -u $USER -p$PASSWORD $DATABASE < sql/templates.sql
 docker exec -i mysql5 mysql -u $USER -p$PASSWORD $DATABASE < sql/templatedata.sql
 
-
+echo "------------------------------------"
 echo "mysql用户名$USER,密码 $PASSWORD"
 echo "修改 config.php 中的微信支付宝信息"
 echo "然后 docker restart datadraw"
 echo "http://127.0.0.1:8081/"
-echo "用户名:admin@datadraw.net 密码:admin"
+echo "用户名: admin@datadraw.net 密码: admin"
