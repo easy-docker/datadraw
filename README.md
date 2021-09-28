@@ -1,3 +1,8 @@
+# 介绍
+此镜像仅适用于个人使用，快速开始一个服务，很多配置是不保留的。
+
+如果需要配置更多内容，请使用其他[项目](https://github.com/ghostry/DataDraw)
+
 # 快速开始
 此方法适合在空的服务器上，会同时安装DataDraw和MySQL5
 ```
@@ -43,5 +48,6 @@ docker run -d -p \
     -e HOSTPORT=$HOSTPORT \
     ghostry/datadraw
 ```
+
 # 介绍
 [原项目介绍](https://github.com/zxhm001/DataDraw#readme)
