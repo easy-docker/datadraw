@@ -20,7 +20,7 @@ mkdir -p public
 docker run -d -p \
     8081:80 \
     --name datadraw \
-    -v "$PWD/sql":/var/www/mysql \
+    -v "$PWD/sql":/var/www/sql \
     -v "$PWD/public":/var/www/html/public \
     -v "$PWD/config.php":/var/www/html/application/config.php \
     --restart always \
@@ -35,8 +35,6 @@ docker run -d -p \
 docker exec mysql5 mysql -u $USER -p$PASSWORD -e "CREATE DATABASE $DATABASE DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
 #importdata
 docker exec mysql5 mysql -u $USER -p$PASSWORD $DATABASE < sql/mysql.sql
-docker exec mysql5 mysql -u $USER -p$PASSWORD $DATABASE < sql/templates.sql
-docker exec mysql5 mysql -u $USER -p$PASSWORD $DATABASE < sql/templatedata.sql
 
 echo "------------------------------------"
 echo "mysql用户名$USER,密码 $PASSWORD"

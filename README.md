@@ -32,7 +32,7 @@ mkdir -p public
 docker run -d -p \
     8081:80 \
     --name $name \
-    -v "$PWD/sql":/var/www/mysql \
+    -v "$PWD/sql":/var/www/sql \
     -v "$PWD/public":/var/www/html/public \
     -v "$PWD/config.php":/var/www/html/application/config.php \
     --restart always \
