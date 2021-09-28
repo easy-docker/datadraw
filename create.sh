@@ -1,9 +1,9 @@
 #!/bin/bash
 USER="root"
-if [ "$PASSWORD" == "" ]:then
+if [ "$PASSWORD" == "" ];then
     PASSWORD="123456"
 fi
-if [ "$DATABASE" == "" ]:then
+if [ "$DATABASE" == "" ];then
     DATABASE="datadraw"
 fi
 
