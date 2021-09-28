@@ -32,11 +32,11 @@ docker run -d -p \
     ghostry/datadraw
 
 #crate database
-docker exec -i mysql5 mysql -u $USER -p$PASSWORD -e "CREATE DATABASE $DATABASE DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+docker exec mysql5 mysql -u $USER -p$PASSWORD -e "CREATE DATABASE $DATABASE DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
 #importdata
-docker exec -i mysql5 mysql -u $USER -p$PASSWORD $DATABASE < sql/mysql.sql
-docker exec -i mysql5 mysql -u $USER -p$PASSWORD $DATABASE < sql/templates.sql
-docker exec -i mysql5 mysql -u $USER -p$PASSWORD $DATABASE < sql/templatedata.sql
+docker exec mysql5 mysql -u $USER -p$PASSWORD $DATABASE < sql/mysql.sql
+docker exec mysql5 mysql -u $USER -p$PASSWORD $DATABASE < sql/templates.sql
+docker exec mysql5 mysql -u $USER -p$PASSWORD $DATABASE < sql/templatedata.sql
 
 echo "------------------------------------"
 echo "mysql用户名$USER,密码 $PASSWORD"
@@ -44,3 +44,4 @@ echo "修改 config.php 中的微信支付宝信息"
 echo "然后 docker restart datadraw"
 echo "http://127.0.0.1:8081/"
 echo "用户名: admin@datadraw.net 密码: admin"
+
