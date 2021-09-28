@@ -35,5 +35,7 @@ docker exec -i mysql5 mysql -u $USER -p$PASSWORD $DATABASE < sql/templatedata.sq
 
 
 echo "mysql用户名$USER,密码 $PASSWORD"
+echo "修改 config.php 中的微信支付宝信息"
+echo "然后 docker restart datadraw"
 echo "http://127.0.0.1:8081/"
 echo "用户名:admin@datadraw.net 密码:admin"
