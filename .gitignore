@@ -6,3 +6,5 @@ composer.lock
 datadraw.sublime-workspace
 .DS_Store
 /sql/
+/config.php
+/public/

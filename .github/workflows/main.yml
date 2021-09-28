@@ -37,6 +37,7 @@ jobs:
       - name: composer install
         run: |
           docker run --rm --interactive -v $PWD/datadraw:/app --user $(id -u):$(id -g) composer install
+          ls datadraw
       - name: Push to Docker Hub
         uses: docker/build-push-action@v2
         with:
