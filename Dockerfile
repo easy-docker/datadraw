@@ -9,8 +9,8 @@ ENV HOSTPORT 3306
 RUN rm -rf /var/www/html
 
 COPY datadraw /var/www/html
-COPY start.sh /start.sh
 COPY mysql.sql /var/www/
+COPY start.sh /start.sh
 
 RUN chmod +x /start.sh
 

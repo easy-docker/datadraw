@@ -5,3 +5,4 @@ thinkphp/*
 composer.lock
 datadraw.sublime-workspace
 .DS_Store
+/sql/
